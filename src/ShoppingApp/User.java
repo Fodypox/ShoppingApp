@@ -1,9 +1,71 @@
 package ShoppingApp;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public class User {
+private String name;
+private String address;
+private Cart cart;
+private double shippingCost;
+private UserType userType;
 
+    public User(String name, String address) {
+        this.name = name;
+        this.address = address;
+        this.cart = cart;
+        this.shippingCost = shippingCost;
+        this.userType = userType;
+    }
 
-/** This class has
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    public double getShippingCost() {
+        return shippingCost;
+    }
+
+    public void setShippingCost(double shippingCost) {
+        this.shippingCost = shippingCost;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+    public void addToCart(Product product){
+       cart.getCartProducts().add(product);
+       cart.setTotal(product.getPrice());
+    }
+    public void removeFromCard(Product product){
+        cart.getCartProducts().remove(product);
+        cart.setTotal(-product.getPrice());
+    }
+    /** This class has
  *             private String name, address;
  *             private Cart cart;
  *             private double shippingCost;
